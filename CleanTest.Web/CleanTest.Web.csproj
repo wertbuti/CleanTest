@@ -1,0 +1,28 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="12.0.0" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="6.0.10" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.3.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\CleanTest.Core\CleanTest.Core.csproj" />
+    <ProjectReference Include="..\CleanTest.Infrastructure\CleanTest.Infrastructure.csproj" />
+    <ProjectReference Include="..\CleanTest.SharedKernel\CleanTest.SharedKernel.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Areas\CatalogArea\Controllers\" />
+    <Folder Include="Areas\CatalogArea\Data\" />
+    <Folder Include="Areas\CatalogArea\Views\" />
+    <Folder Include="Views\Shared\" />
+  </ItemGroup>
+
+</Project>

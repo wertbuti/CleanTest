@@ -1,0 +1,50 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>@ViewData["Title"]</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+</head>
+<body>
+    <section>
+        <div class="container">
+            <img style="width:100%" src="~/images/main_banner.png" />
+        </div>
+    </section>
+
+
+
+    <div>
+        <header class="esh-app-header">
+            <div class="container">
+                <article class="row">
+                    <section class="col-lg-7 col-md-6 col-xs-12">
+                        <a  asp-page="/index">
+                            <img src="~/images/brand.png" alt="eShop On Web" />
+                        </a>
+                    </section>
+                    @*<partial name="_LoginPartial" />*@
+                </article>
+            </div>
+        </header>
+        @RenderBody()
+        <footer class="container bg-dark text-white">
+            <div class="container">
+                <article class="row">
+                    <section class="col-sm-6"></section>
+                    <section class="col-sm-6">
+                        <div class="esh-app-footer-text hidden-xs"> e-ShopOnWeb. All rights reserved </div>
+                    </section>
+                </article>
+            </div>
+        </footer>
+    </div>
+
+
+
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.min.js"></script>
+    @await RenderSectionAsync("scripts",required:false)
+</body>
+</html>

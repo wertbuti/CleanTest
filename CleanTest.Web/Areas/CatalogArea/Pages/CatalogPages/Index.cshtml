@@ -1,0 +1,63 @@
+﻿@page "/"
+
+@{
+    ViewData["Title"] = "Catalog";
+    @model CleanTest.Web.Areas.CatalogArea.Pages.CatalogPages.IndexModel
+
+}
+
+<form method="get">
+    <select asp-for="@Model.CatalogIndexModel.TypeFilterApplied" asp-items="@Model.CatalogIndexModel.Types"></select>
+    <select asp-for="@Model.CatalogIndexModel.BrandFilterApplied" asp-items="@Model.CatalogIndexModel.Brands"></select>
+</form>
+
+@*<h1>hello</h1>
+    @foreach(var item in Model.CatalogViewModels)
+    {
+    <span>@item.Name</span><br />
+    }*@
+
+<div class="container">
+    @if (Model.CatalogIndexModel.Catalogs.Any())
+    {
+        @* <partial name="_pagination" for="CatalogModel.PaginationInfo" />*@
+
+        <div class="esh-catalog-items row">
+            @foreach (var catalogItem in Model.CatalogIndexModel.Catalogs)
+            {
+                <div class="esh-catalog-item col-md-4">
+                    @*<partial name="_product" for="@catalogItem" />*@
+                    <partial name="_product" for="@catalogItem" />
+
+                    @catalogItem.Name
+                </div>
+            }
+        </div>
+        @* <partial name="_pagination" for="CatalogModel.PaginationInfo" />*@
+    }
+    else
+    {
+        <div class="esh-catalog-items row">
+            THERE ARE NO RESULTS THAT MATCH YOUR SEARCH
+        </div>
+    }
+</div>
+@*<section class="esh-catalog-filters">
+    <div class="container">
+    <form method="get">
+    <label class="esh-catalog-label" data-title="brand">
+    <select asp-for="@Model.CatalogModel.BrandFilterApplied" asp-items="@Model.CatalogModel.Brands" class="esh-catalog-filter"></select>
+    </label>
+    <label class="esh-catalog-label" data-title="type">
+    <select asp-for="@Model.CatalogModel.TypesFilterApplied" asp-items="@Model.CatalogModel.Types" class="esh-catalog-filter"></select>
+    </label>
+    <input class="esh-catalog-send" type="image" src="~/images/arrow-right.svg" />
+    </form>
+    </div>
+    </section>*@
+
+
+
+@section Scripts{
+
+}

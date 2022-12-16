@@ -1,0 +1,30 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="CatalogBrandAggregate\Events\" />
+    <Folder Include="CatalogBrandAggregate\Handlers\" />
+    <Folder Include="CatalogBrandAggregate\Specifications\" />
+    <Folder Include="CatalogAggregate\Events\" />
+    <Folder Include="CatalogAggregate\Handles\" />
+    <Folder Include="CatalogTypeAggregate\Events\" />
+    <Folder Include="CatalogTypeAggregate\Handlers\" />
+    <Folder Include="CatalogTypeAggregate\Specifications\" />
+    <Folder Include="Extensions\" />
+    <Folder Include="Exceptions\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Autofac" Version="6.5.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\CleanTest.SharedKernel\CleanTest.SharedKernel.csproj" />
+  </ItemGroup>
+
+</Project>
